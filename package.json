@@ -1,0 +1,20 @@
+{
+  "name": "ecommerce_astro",
+  "version": "1.0.0",
+  "description": "full stack ecommerce website",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+		"turbo": "^1.10.13"
+	},
+	"workspaces":[
+		"apps/*"
+	],
+	
+	"scripts": {
+		"dev": "turbo dev",
+		"build": "turbo build",
+		"start": "node apps/backend/dist/main.js"
+	}
+}
