@@ -1,5 +1,5 @@
 ---
-
+import DarkModeButton from "./react/DarkModeButton";
 ---
 <nav class="h-16 flex items-center bg-slate-950">
   <ul class="grid grid-cols-3 md:grid-cols-4 w-[90dvw] mx-auto lg:w-[95dvw] text-white font-medium">
@@ -12,8 +12,7 @@
       </a>
     </li>
     <li class="flex">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3h.393a7.5 7.5 0 0 0 7.92 12.446A9 9 0 1 1 12 2.992z"/></svg>
-      <button class="mx-2">Ingresar</button>
+      <DarkModeButton client:only="react"/>
     </li>
   </ul>
 </nav>
