@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "full stack ecommerce website",
   "keywords": [],
-  "author": "",
+  "author": "Nicolas Bouffanais",
   "license": "ISC",
   "devDependencies": {
 		"turbo": "^1.10.13"
