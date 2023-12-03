@@ -8,6 +8,7 @@
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "generate": "drizzle-kit generate:pg",
     "start": "nest start",
     "dev": "nest start --watch --preserveWatchOutput",
     "start:debug": "nest start --debug --watch",
