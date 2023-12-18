@@ -1,7 +1,7 @@
 type Props = {
   text: string;
-  color: 'indigo' | 'cyan' | 'red'
-  size: 'sm' | 'md' | 'lg'
+  color: "dark" | "blue" | "red";
+  size: "sm" | "md" | "lg";
 };
 
 const sizes = {
@@ -11,9 +11,9 @@ const sizes = {
 };
 
 const colors = {
-  indigo: "bg-indigo-500 hover:bg-indigo-600 text-white",
-  cyan: "bg-cyan-600 hover:bg-cyan-700 text-white",
-  red: "bg-red-600 hover:bg-red-700 text-black",
+  dark: "bg-black hover:bg-black text-white dark: ",
+  blue: "bg-blue-600 hover:bg-blue-700 text-white dark: ",
+  red: "bg-red-600 hover:bg-red-700 text-black dark: ",
 };
 
 const Button = (props:Props) => {

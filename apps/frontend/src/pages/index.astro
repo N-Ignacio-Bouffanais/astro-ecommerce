@@ -1,13 +1,15 @@
 ---
+import Filters from '../components/react/Filters';
 import MySiteLayout from '../layouts/MySiteLayout.astro';
 ---
 
 <MySiteLayout title="Home page">
   <div class=" bg-white dark:bg-[#1b1c21] h-[90dvh] w-[100dvw] py-6">
 		<div class="rounded-2xl w-[90dvw] mx-auto h-32 bg-cyan-500 p-6">
-		<h1 class="text-white text-2xl font-semibold">Especial Verano!</h1>
-		<p class="text-lg my-2 font-medium">60% de descuento en todo tipo de poleras,camisas y shorts.</p>
-	</div>
+			<h1 class="text-white text-2xl font-semibold">Especial Verano!</h1>
+			<p class="text-lg my-2 font-medium">60% de descuento en todo tipo de poleras, camisas y shorts.</p>
+		</div>
+		<Filters/>
 	</div>
 </MySiteLayout>
 		
