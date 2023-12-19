@@ -1,16 +1,33 @@
 ---
+import Card from '../components/react/Card';
 import Filters from '../components/react/Filters';
 import MySiteLayout from '../layouts/MySiteLayout.astro';
 ---
 
 <MySiteLayout title="Home page">
-  <div class=" bg-slate-100 dark:bg-[#1b1c21] h-[90dvh] w-[100dvw] py-6">
+  <div class=" bg-slate-100 dark:bg-[#1b1c21] w-[100dvw] py-6">
 		<div class="rounded-2xl w-[90dvw] mx-auto h-32 bg-cyan-500 p-6">
 			<h1 class="text-white text-2xl font-semibold">Especial Verano!</h1>
 			<p class="text-lg my-2 font-medium">60% de descuento en todo tipo de poleras, camisas y shorts.</p>
 		</div>
 		<Filters/>
-	</div>
+		<section class="w-[90dvw] mx-auto py-6">
+			<div class="card-container">
+				<Card client:only="react"/>
+				<Card client:only="react"/>
+				<Card client:only="react"/>
+				<Card client:only="react"/>
+				<Card client:only="react"/>
+			</div>
+		</div>
+	</section>
 </MySiteLayout>
 		
-
+<style>
+	.card-container{
+		display: grid;
+		gap: 3rem;
+    grid-auto-rows: 20rem;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+	}
+</style>

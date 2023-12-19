@@ -18,7 +18,7 @@ const Filters = () => {
             />
           </svg>
           <input
-            className="h-12 w-full rounded-2xl border-2 pl-9 outline-none dark:"
+            className="h-12 w-full rounded-2xl border-2 pl-9 outline-none border-[#1b1c21]"
             type="text"
             aria-label="search input"
             placeholder="Buscar en Atom Center"
@@ -29,9 +29,6 @@ const Filters = () => {
           <Button text="poleras" size="md" color="dark" />
           <Button text="camisas" size="md" color="dark" />
         </div>
-      </div>
-      <div className="w-[90dvw] mx-auto">
-        <h1>Hola{} ----</h1>
       </div>
     </>
   );
