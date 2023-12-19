@@ -7,3 +7,33 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+
+model User{
+  id String @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  email String  @unique
+  username String
+  hash String
+  role String
+
+  @@map("users")
+}
+
+model Product{
+  id String @id @default(cuid())
+
+
+
+
+  @@map("products")
+}
+
+model Category{
+  id String @id @default(cuid())
+
+
+
+  @@map("categories")
+}

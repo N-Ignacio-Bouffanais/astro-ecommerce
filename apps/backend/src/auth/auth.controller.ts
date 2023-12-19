@@ -1,5 +1,3 @@
-import { InjectDatabase } from 'src/database/database.decorator';
-import { schema } from 'src/database/schema';
 import {
   Body,
   Controller,
@@ -9,8 +7,6 @@ import {
   HttpException,
 } from '@nestjs/common';
 import { LoginDto, RegisterDto } from './dto';
-import { InferInsertModel, InferSelectModel } from 'drizzle-orm';
-import { PostgresJsDatabase } from 'drizzle-orm/postgres-js';
 import { AuthService } from './auth.service';
 
 

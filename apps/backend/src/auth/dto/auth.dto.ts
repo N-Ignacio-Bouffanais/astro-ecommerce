@@ -1,8 +1,8 @@
 import { IsNotEmpty, IsEnum, IsString, IsEmail } from 'class-validator';
 
 enum AllowedRole {
-  ADMIN,
-  USER,
+  "ADMIN",
+  "USER",
 }
 
 export class LoginDto {
@@ -18,7 +18,7 @@ export class LoginDto {
 export class RegisterDto extends LoginDto {
   @IsString()
   @IsNotEmpty()
-  fullName: string;
+  username: string;
 
   @IsString()
   @IsNotEmpty()
