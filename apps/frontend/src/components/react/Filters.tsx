@@ -6,7 +6,7 @@ const Filters = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-[90dvw] mx-auto mt-6">
         <form className="relative">
           <svg
-            className="absolute top-3 left-1"
+            className="absolute top-3 left-2"
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
@@ -18,7 +18,7 @@ const Filters = () => {
             />
           </svg>
           <input
-            className="h-12 w-full rounded-2xl border-2 pl-8 outline-none"
+            className="h-12 w-full rounded-2xl border-2 pl-9 outline-none dark:"
             type="text"
             aria-label="search input"
             placeholder="Buscar en Atom Center"
