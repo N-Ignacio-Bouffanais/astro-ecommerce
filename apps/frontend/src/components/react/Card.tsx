@@ -1,10 +1,10 @@
 
 const Card = () => {
   return (
-    <div className="bg-slate-300 rounded-lg p-4 w-full">
-      <div className="h-8 flex justify-end">
+    <div class="bg-slate-300 rounded-lg p-4 w-full">
+      <div class="h-8 flex justify-end">
         <svg
-          className=""
+          class=""
           xmlns="http://www.w3.org/2000/svg"
           width="18"
           height="18"

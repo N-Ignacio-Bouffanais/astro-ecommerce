@@ -1,29 +1,35 @@
-import { useEffect, useState } from "react";
+import { createSignal, createEffect } from "solid-js";
 
 const DarkModeButton = () => {
 
-  const [theme, setTheme] = useState(() => {
+  const initializeTheme = () => {
+    let theme;
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      return "dark";
-    }
-    return "light";
-  });
-
-  useEffect(() => {
-    const doc = document.querySelector("html") as HTMLElement;
-    if (theme === "dark") {
-      doc.classList.add("dark");
+      theme = "dark";
     } else {
-      doc.classList.remove("dark");
+      theme = "light";
     }
-  }, [theme]);
-
-  const HandleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+    return theme;
   };
 
+  const [theme, setTheme] = createSignal<string>(initializeTheme());
+  const doc = document.querySelector("html") as HTMLElement;
+
+  createEffect(() => {
+    if (theme() === "dark") {
+      doc.classList.add("dark");
+    }
+    if (theme() === "dark") {
+      doc.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      doc.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  });
+
   return (
-    <button onClick={HandleTheme}>
+    <button onClick={() => setTheme((t) => (t === "light" ? "dark" : "light"))}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="32"
@@ -33,9 +39,9 @@ const DarkModeButton = () => {
         <path
           fill="none"
           stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
           d="M12 3h.393a7.5 7.5 0 0 0 7.92 12.446A9 9 0 1 1 12 2.992z"
         />
       </svg>
