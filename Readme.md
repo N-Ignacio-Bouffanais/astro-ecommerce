@@ -1,13 +1,17 @@
 # FullStack Ecommerce
 
-- In this project I will build a fullstack Typescript Application using Astro, ReactJS and Nestjs.
+- In this project I will build a fullstack Typescript Application using Astro, Solidjs and Nestjs. With nanostores for state between components.
 
-## Features
+## Features Frontend
 
-- Astro: JavaScript metaframework for frontend
-- React: JavaScript framework for frontend
-- NestJS: Typescript framework for backend
+- Astro: JavaScript metaframework
+- Solidjs: JavaScript framework
+- Tailwind: CSS framework
+
+## Features Backend
+
+- NestJS: Typescript framework
+- JWT: Authentication
 - Prisma: Typescript ORM
-- Swagger: library for documentation
 - PostgreSQL: database
 
