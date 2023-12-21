@@ -29,7 +29,7 @@ const DarkModeButton = () => {
   });
 
   return (
-    <button onClick={() => setTheme((t) => (t === "light" ? "dark" : "light"))}>
+    <button onClick={() => setTheme((t) => (t === "light" ? "dark" : "light"))} title="dark mode/light mode">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="32"

@@ -1,5 +1,6 @@
 type Props = {
   text: string;
+  title: string;
   color: "dark" | "blue" | "red";
   size: "sm" | "md" | "lg";
 };

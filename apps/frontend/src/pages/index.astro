@@ -1,21 +1,19 @@
 ---
-import Card from '../components/Card';
+import Cards from '../components/Cards';
 import Filters from '../components/Filters';
 import MySiteLayout from '../layouts/MySiteLayout.astro';
 ---
 
 <MySiteLayout title="Home page">
   <div class=" bg-slate-100 dark:bg-[#1b1c21] w-[100dvw] py-6">
-		<div class="rounded-2xl w-[90dvw] mx-auto h-32 bg-cyan-500 p-6">
+		<div class="rounded-2xl w-[90dvw] mx-auto h-32 bg-[#025efd] p-6">
 			<h1 class="text-white text-2xl font-semibold">Especial Verano!</h1>
-			<p class="text-lg my-2 font-medium">60% de descuento en todo tipo de poleras, camisas y shorts.</p>
+			<p class="text-white text-lg my-2 font-medium">60% de descuento en todo tipo de poleras, camisas y shorts.</p>
 		</div>
 		<Filters/>
 		<section class="w-[90dvw] mx-auto py-6">
 			<div class="card-container">
-				<Card client:only="solid-js"/>
-				<Card client:only="solid-js"/>
-				<img src="polera-gris-L.png" alt="">
+				<Cards client:only="solid-js"/>
 			</div>
 		</div>
 	</section>
