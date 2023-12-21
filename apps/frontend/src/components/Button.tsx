@@ -20,7 +20,7 @@ const Button = (props:Props) => {
   let colorClasses = colors[props.color];
   let sizeClasses = sizes[props.size];
   return (
-    <button className={`font-bold ${sizeClasses} ${colorClasses}`}>
+    <button class={`font-bold ${sizeClasses} ${colorClasses}`}>
       {props.text}
     </button>
   )
