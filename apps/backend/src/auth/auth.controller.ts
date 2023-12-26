@@ -4,7 +4,6 @@ import {
   Post,
   HttpCode,
   HttpStatus,
-  HttpException,
 } from '@nestjs/common';
 import { LoginDto, RegisterDto } from './dto';
 import { AuthService } from './auth.service';
@@ -17,14 +16,12 @@ export class AuthController {
   @HttpCode(HttpStatus.OK)
   @Post('login')
   async SignIn(@Body() loginDto: LoginDto): Promise<{}> {
-    try {
-      return this.authService.SignIn(loginDto);
-    } catch (error) {
-      throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR);
-    }
+    return this.authService.SignIn(loginDto);
   }
 
-  async SignUp(registerDto: RegisterDto){
-
+  @HttpCode(HttpStatus.OK)
+  @Post('register')
+  async SignUp(@Body() registerDto: RegisterDto) {
+    return this.authService.Register(registerDto);
   }
 }

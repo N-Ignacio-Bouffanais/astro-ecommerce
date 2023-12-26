@@ -5,6 +5,7 @@ import * as bcrypt from 'bcrypt';
 import { ConfigService } from '@nestjs/config';
 import { PrismaService } from 'src/prisma/prisma.service';
 
+
 @Injectable()
 export class AuthService {
   constructor(
@@ -14,24 +15,24 @@ export class AuthService {
   ) {}
 
   async SignIn(loginDto: LoginDto) {
-    const findUser = await this.prisma.user.findUnique({
+    const user = await this.prisma.user.findUnique({
       where: {
         email: loginDto.email,
       },
     });
 
-    if (!findUser) throw new HttpException('User not found', 404);
+    if (!user) throw new HttpException('User not found', 404);
 
     const checkPassword = await bcrypt.compare(
       loginDto.password,
-      findUser.hash,
+      user.hash,
     );
 
     if (!checkPassword) throw new HttpException('Wrong Password', 403);
 
     const payload = {
-      username: findUser.username,
-      role: findUser.role,
+      username: user.username,
+      role: user.role,
     };
 
     const token = this.jwtService.sign(payload, {
@@ -42,11 +43,15 @@ export class AuthService {
     return token;
   }
 
-  async SignUp(registerDto: RegisterDto) {
-    const findUser = await this.prisma.user.findFirst();
-    if (findUser) throw new Error(`User already registered`);
+  async Register(registerDto: RegisterDto) {
+    const user = await this.prisma.user.findUnique({
+      where:{
+        email: registerDto.email
+      }
+    });
+    if (user) throw new Error(`User already registered`);
 
-    if (!findUser) {
+    if (!user) {
       const hashedPassword = await bcrypt.hash(registerDto.password, 10);
       const newUser = await this.prisma.user.create({
         data: {

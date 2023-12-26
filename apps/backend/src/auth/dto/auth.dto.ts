@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsEnum, IsString, IsEmail } from 'class-validator';
+import { IsNotEmpty, IsEnum, IsString, IsEmail, MinLength } from 'class-validator';
 
 enum AllowedRole {
   "ADMIN",
@@ -6,12 +6,13 @@ enum AllowedRole {
 }
 
 export class LoginDto {
-  @IsNotEmpty()
-  @IsEmail()
+  // @IsString()
+  // @IsEmail()
   email: string;
 
   @IsNotEmpty()
   @IsString()
+  @MinLength(6, { message: 'Password must be at least 6 characters' })
   password: string;
 }
 
