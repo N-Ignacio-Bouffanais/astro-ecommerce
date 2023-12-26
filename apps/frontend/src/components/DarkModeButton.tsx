@@ -1,7 +1,6 @@
 import { createSignal, createEffect } from "solid-js";
 
 const DarkModeButton = () => {
-
   const initializeTheme = () => {
     let theme;
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
@@ -29,12 +28,16 @@ const DarkModeButton = () => {
   });
 
   return (
-    <button onClick={() => setTheme((t) => (t === "light" ? "dark" : "light"))} title="dark mode/light mode">
+    <button
+      class="mr-2"
+      onClick={() => setTheme((t) => (t === "light" ? "dark" : "light"))}
+      title="dark mode/light mode"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="32"
-        height="32"
-        viewBox="0 0 32 32"
+        width="28"
+        height="28"
+        viewBox="0 0 24 24"
       >
         <path
           fill="none"

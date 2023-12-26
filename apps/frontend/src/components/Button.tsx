@@ -14,7 +14,7 @@ const sizes = {
 const colors = {
   dark: "bg-black hover:bg-black text-white dark: ",
   blue: "bg-blue-600 hover:bg-blue-700 text-white dark: ",
-  red: "bg-red-600 hover:bg-red-700 text-black dark: ",
+  red: "bg-red-600 hover:bg-red-700 text-white dark: ",
 };
 
 const Button = (props:Props) => {
