@@ -7,7 +7,11 @@ import { PrismaService } from 'src/prisma/prisma.service';
 
 @Injectable()
 export class AuthService {
-  constructor(private prisma: PrismaService, private jwtService: JwtService, private config: ConfigService) {}
+  constructor(
+    private prisma: PrismaService,
+    private jwtService: JwtService,
+    private config: ConfigService,
+  ) {}
 
   async SignIn(loginDto: LoginDto) {
     const findUser = await this.prisma.user.findUnique({
@@ -27,7 +31,7 @@ export class AuthService {
 
     const payload = {
       username: findUser.username,
-      role: findUser.role
+      role: findUser.role,
     };
 
     const token = this.jwtService.sign(payload, {
@@ -39,19 +43,19 @@ export class AuthService {
   }
 
   async SignUp(registerDto: RegisterDto) {
-    const findUser = await this.prisma.user.findFirst()
+    const findUser = await this.prisma.user.findFirst();
     if (findUser) throw new Error(`User already registered`);
 
     if (!findUser) {
       const hashedPassword = await bcrypt.hash(registerDto.password, 10);
       const newUser = await this.prisma.user.create({
-        data:{
+        data: {
           email: registerDto.email,
           hash: hashedPassword,
           role: registerDto.role.toString(),
           username: registerDto.username,
-        }
-      })
+        },
+      });
 
       const user = {
         username: newUser.username,
