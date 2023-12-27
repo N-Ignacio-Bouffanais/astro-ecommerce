@@ -6,8 +6,8 @@ enum AllowedRole {
 }
 
 export class LoginDto {
-  // @IsString()
-  // @IsEmail()
+  @IsString()
+  @IsEmail()
   email: string;
 
   @IsNotEmpty()

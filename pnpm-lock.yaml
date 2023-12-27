@@ -103,9 +103,11 @@ importers:
       astro: ^3.6.0
       axios: ^1.6.2
       nanostores: ^0.9.5
+      solid-form-handler: ^1.2.1
       solid-js: ^1.4.3
       tailwindcss: ^3.0.24
       typescript: ^5.3.2
+      zod: ^3.22.4
     dependencies:
       '@astrojs/check': 0.3.1_typescript@5.3.2
       '@astrojs/solid-js': 3.0.2_solid-js@1.8.7
@@ -115,9 +117,11 @@ importers:
       astro: 3.6.0_typescript@5.3.2
       axios: 1.6.2
       nanostores: 0.9.5
+      solid-form-handler: 1.2.1_solid-js@1.8.7
       solid-js: 1.8.7
       tailwindcss: 3.3.5
       typescript: 5.3.2
+      zod: 3.22.4
 
 packages:
 
@@ -7357,6 +7361,14 @@ packages:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==}
     engines: {node: '>=8'}
     dev: true
+
+  /solid-form-handler/1.2.1_solid-js@1.8.7:
+    resolution: {integrity: sha512-jz+nSYDALQaYJ3CxPT0zB4Ol6b2vV3YI+Z4unsezly0DxOCpC30/dNt23VjH8BKpPxJjdIiAtU4hmiB01WP8ww==}
+    peerDependencies:
+      solid-js: ^1
+    dependencies:
+      solid-js: 1.8.7
+    dev: false
 
   /solid-js/1.8.7:
     resolution: {integrity: sha512-9dzrSVieh2zj3SnJ02II6xZkonR6c+j/91b7XZUNcC6xSaldlqjjGh98F1fk5cRJ8ZTkzqF5fPIWDxEOs6QZXA==}

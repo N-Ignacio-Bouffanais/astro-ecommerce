@@ -1,3 +1,5 @@
+import type { Component } from "solid-js";
+
 type Props = {
   text: string;
   title: string;
@@ -17,14 +19,14 @@ const colors = {
   red: "bg-red-600 hover:bg-red-700 text-white dark: ",
 };
 
-const Button = (props:Props) => {
+const Button:Component<Props> = (props: Props) => {
   let colorClasses = colors[props.color];
   let sizeClasses = sizes[props.size];
   return (
     <button class={`font-bold ${sizeClasses} ${colorClasses}`}>
       {props.text}
     </button>
-  )
-}
+  );
+};
 
 export default Button

@@ -1,4 +1,5 @@
 ---
+import LoginForm from '../components/LoginForm';
 import MySiteLayout from '../layouts/MySiteLayout.astro';
 
 ---
@@ -6,7 +7,7 @@ import MySiteLayout from '../layouts/MySiteLayout.astro';
 <MySiteLayout title="login">
 <div>
   <div>
-
+    <LoginForm client:only="solid-js"/>
   </div>
 </div>
 </MySiteLayout>
