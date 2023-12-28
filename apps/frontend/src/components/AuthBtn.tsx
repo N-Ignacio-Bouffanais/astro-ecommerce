@@ -1,14 +1,13 @@
-import Button from "./Button"
 
 const AuthBtn = () => {
   let auth = false
   return (
     <>
       {!auth && (
-        <a href="/login/">Ingresar</a>
+        <a className="flex items-center rounded-lg bg-blue-600 h-10 px-3 font-semibold text-white" href="/login/">Ingresar</a>
       )}
       {auth && (
-        <a href="/register/">Registarme</a>
+        <a className="flex items-center rounded-lg bg-red-600 h-10 px-3 font-semibold text-white" href="/register/">Salir</a>
       )}
     </>
   );
