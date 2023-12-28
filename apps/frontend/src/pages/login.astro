@@ -5,9 +5,9 @@ import MySiteLayout from '../layouts/MySiteLayout.astro';
 ---
 
 <MySiteLayout title="login">
-<div>
-  <div>
-    <LoginForm client:only=""/>
+<div class="flex w-full flex-col justify-center bg-slate-300 dark:bg-[#121622] h-[100dvh]">
+      <div class="flex flex-col items-center mb-6 mx-auto space-y-3 text-center w-[340px] sm:w-[420px]">
+    <LoginForm client:load/>
   </div>
 </div>
 </MySiteLayout>

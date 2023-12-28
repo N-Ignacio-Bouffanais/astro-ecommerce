@@ -3,10 +3,10 @@ import Button from "./Button"
 const Filters = () => {
   return (
     <>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-[90dvw] mx-auto mt-6">
-        <form class="relative">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-[90dvw] mx-auto mt-6">
+        <form className="relative">
           <svg
-            class="absolute top-3 left-2"
+            className="absolute top-3 left-2"
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
@@ -18,13 +18,13 @@ const Filters = () => {
             />
           </svg>
           <input
-            class="h-12 w-full rounded-2xl border-2 pl-9 outline-none border-[#1b1c21]"
+            className="h-12 w-full rounded-2xl border-2 pl-9 outline-none border-[#1b1c21]"
             type="text"
             aria-label="search input"
             placeholder="Buscar en Atom Center"
           />
         </form>
-        <div class="flex gap-1">
+        <div className="flex gap-1">
           <Button
             title="accesorios"
             text="accesorios"
