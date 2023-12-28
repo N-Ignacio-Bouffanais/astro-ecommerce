@@ -1,6 +1,5 @@
-import Card from "./Card.astro"
+import Card from "./Card.tsx"
 import axios from "../libs/axios"
-import { For, Match, Switch, createResource } from "solid-js"
 
 type Data={
   id:string
@@ -14,23 +13,12 @@ const Cards = () => {
     console.log(data)
     return data
   }
-  const [data] = createResource(getCards);
 
 
   return (
     <>
       <div>
-        <Switch>
-          <Match when={data.loading}>
-            <p>Loading...</p>
-          </Match>
-          <Match when={data.error}>
-            <p>Error: {data.error?.message}</p>
-          </Match>
-          <Match when={data != null}>
-            <For each={data()}>{(card: Data) => <Card product={card.product}/>}</For>
-          </Match>
-        </Switch>
+        
       </div>
     </>
   );

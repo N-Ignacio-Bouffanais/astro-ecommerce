@@ -1,11 +1,12 @@
-import type { Component } from "solid-js";
 
 type Props = {
-  text: string;
+  onClick?: (event: MouseEvent) =>{}
+  text?: string;
   title: string;
   color: "dark" | "blue" | "red";
   size: "sm" | "md" | "lg";
   disabled?: boolean;
+  children?: JSX.Element
 };
 
 const sizes = {
@@ -20,12 +21,12 @@ const colors = {
   red: "bg-red-600 hover:bg-red-700 text-white dark: ",
 };
 
-const Button:Component<Props> = (props: Props) => {
+const Button = (props: Props) => {
   let colorClasses = colors[props.color];
   let sizeClasses = sizes[props.size];
   return (
     <button
-      class={`font-bold ${sizeClasses} ${colorClasses} disabled:cursor-not-allowed`}
+      className={`font-bold ${sizeClasses} ${colorClasses} disabled:cursor-not-allowed`}
     >
       {props.text}
     </button>

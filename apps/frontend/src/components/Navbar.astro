@@ -1,5 +1,5 @@
 ---
-import AuthBtn from "./AuthBtn";
+import AuthBtn from "./AuthBtn.tsx";
 import DarkModeButton from "./DarkModeButton";
 ---
 <nav class="w-[100dvw] h-20 flex bg-slate-100 dark:bg-[#1b1c21] dark:text-white">
@@ -22,8 +22,8 @@ import DarkModeButton from "./DarkModeButton";
       </a>
     </li>
     <li class="flex justify-end items-center">
-      <DarkModeButton client:only="solid-js"/>
-      <AuthBtn client:only="solid-js"/>
+      <DarkModeButton client:only="react"/>
+      <AuthBtn client:only="react"/>
     </li>
   </ul>
 </nav>

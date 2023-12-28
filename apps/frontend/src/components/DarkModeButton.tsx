@@ -1,35 +1,26 @@
-import { createSignal, createEffect } from "solid-js";
+import { useEffect, useState } from "react";
 
 const DarkModeButton = () => {
-  const initializeTheme = () => {
-    let theme;
+  const [theme, setTheme] = useState(() => {
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      theme = "dark";
-    } else {
-      theme = "light";
+      return "dark";
     }
-    return theme;
-  };
+    return "light";
+  });
 
-  const [theme, setTheme] = createSignal<string>(initializeTheme());
-  const doc = document.querySelector("html") as HTMLElement;
 
-  createEffect(() => {
-    if (theme() === "dark") {
+  useEffect(() => {
+    const doc = document.querySelector("html") as HTMLElement;
+    if (theme === "dark") {
       doc.classList.add("dark");
-    }
-    if (theme() === "dark") {
-      doc.classList.add("dark");
-      localStorage.setItem("theme", "dark");
     } else {
       doc.classList.remove("dark");
-      localStorage.setItem("theme", "light");
     }
-  });
+  }, [theme]);
 
   return (
     <button
-      class="mr-2"
+      className="mr-2"
       onClick={() => setTheme((t) => (t === "light" ? "dark" : "light"))}
       title="dark mode/light mode"
     >
