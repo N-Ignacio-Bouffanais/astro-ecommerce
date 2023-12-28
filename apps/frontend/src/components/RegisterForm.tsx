@@ -1,8 +1,8 @@
+import type { LoginFormType, RegisterFormType } from "../types/FormSchema";
+
 
 const RegisterForm = () => {
-  return (
-    <div>Register</div>
-  )
-}
+  return <div>RegisterForm</div>;
+};
 
-export default RegisterForm
+export default RegisterForm;

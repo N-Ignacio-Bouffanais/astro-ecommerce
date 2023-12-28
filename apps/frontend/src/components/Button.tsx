@@ -5,6 +5,7 @@ type Props = {
   title: string;
   color: "dark" | "blue" | "red";
   size: "sm" | "md" | "lg";
+  disabled?: boolean;
 };
 
 const sizes = {
@@ -23,7 +24,9 @@ const Button:Component<Props> = (props: Props) => {
   let colorClasses = colors[props.color];
   let sizeClasses = sizes[props.size];
   return (
-    <button class={`font-bold ${sizeClasses} ${colorClasses}`}>
+    <button
+      class={`font-bold ${sizeClasses} ${colorClasses} disabled:cursor-not-allowed`}
+    >
       {props.text}
     </button>
   );
