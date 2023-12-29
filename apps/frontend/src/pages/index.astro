@@ -10,10 +10,10 @@ import MySiteLayout from '../layouts/MySiteLayout.astro';
 			<h1 class="text-white text-2xl font-semibold">Especial Verano!</h1>
 			<p class="text-white text-lg my-2 font-medium">60% de descuento en todo tipo de poleras, camisas y shorts.</p>
 		</div>
-		<Filters/>
+		<Filters client:load/>
 		<section class="w-[90dvw] mx-auto py-6">
 			<div class="card-container">
-				<Cards client:only="solid-js"/>
+				<Cards client:load/>
 			</div>
 		</div>
 	</section>

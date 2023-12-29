@@ -1,12 +1,13 @@
 
 type Props = {
-  onClick?: (event: MouseEvent) =>{}
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
   text?: string;
   title: string;
   color: "dark" | "blue" | "red";
   size: "sm" | "md" | "lg";
   disabled?: boolean;
-  children?: JSX.Element
+  children?: JSX.Element;
+  custom_width?: string;
 };
 
 const sizes = {
@@ -24,9 +25,10 @@ const colors = {
 const Button = (props: Props) => {
   let colorClasses = colors[props.color];
   let sizeClasses = sizes[props.size];
+  let custom_width = props.custom_width;
   return (
     <button
-      className={`font-bold ${sizeClasses} ${colorClasses} disabled:cursor-not-allowed`}
+      className={`font-bold ${sizeClasses} ${colorClasses} ${custom_width} disabled:cursor-not-allowed`}
     >
       {props.text}
     </button>

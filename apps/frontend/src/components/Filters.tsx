@@ -1,9 +1,31 @@
+import { useState } from "react"
 import Button from "./Button"
 
 const Filters = () => {
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const slides = [1,2,3,4]
+
+  const prev = () =>{
+    console.log("prev")
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+    console.log(currentIndex);
+  }
+
+  const next = () => {
+    console.log("next")
+    const isLastSlide = currentIndex === slides.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+    console.log(currentIndex)
+  }
+
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-[90dvw] mx-auto mt-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-[90dvw] mx-auto mt-6">
         <form className="relative">
           <svg
             className="absolute top-3 left-2"
@@ -24,8 +46,8 @@ const Filters = () => {
             placeholder="Buscar en Atom Center"
           />
         </form>
-        <div className="flex gap-1">
-          <button title="left" onClick={() => {}}>
+        <div className="grid gap-1">
+          <button title="left" onClick={() => prev()}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -40,10 +62,37 @@ const Filters = () => {
               </g>
             </svg>
           </button>
-          <Button title="accesorios" text="accesorios" size="md" color="dark" />
-          <Button title="poleras" text="poleras" size="md" color="dark" />
-          <Button title="camisas" text="camisas" size="md" color="dark" />
-          <button title="right" onClick={() => {}}>
+          <div className="flex whitespace-nowrap relative">
+            <Button
+              custom_width="w-32"
+              title="accesorios"
+              text="accesorios"
+              size="md"
+              color="dark"
+            />
+            <Button
+              custom_width="w-32"
+              title="gorros"
+              text="gorros"
+              size="md"
+              color="dark"
+            />
+            <Button
+              custom_width="w-32"
+              title="poleras"
+              text="poleras"
+              size="md"
+              color="dark"
+            />
+            <Button
+              custom_width="w-32"
+              title="camisas"
+              text="camisas"
+              size="md"
+              color="dark"
+            />
+          </div>
+          <button title="right" onClick={() => next()}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
