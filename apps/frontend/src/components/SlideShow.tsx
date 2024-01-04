@@ -63,6 +63,15 @@ export const SlideShow = () => {
             color="dark"
           />
         </SwiperSlide>
+        <SwiperSlide>
+          <Button
+            custom_width="w-36"
+            title="shorts"
+            text="shorts"
+            size="md"
+            color="dark"
+          />
+        </SwiperSlide>
       </Swiper>
     </div>
   );
