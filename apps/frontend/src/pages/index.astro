@@ -2,6 +2,7 @@
 import Cards from '../components/Cards';
 import Filters from '../components/Filters';
 import MySiteLayout from '../layouts/MySiteLayout.astro';
+import {SlideShow} from "../components/SlideShow";
 ---
 
 <MySiteLayout title="Home page">
@@ -10,7 +11,10 @@ import MySiteLayout from '../layouts/MySiteLayout.astro';
 			<h1 class="text-white text-2xl font-semibold">Especial Verano!</h1>
 			<p class="text-white text-lg my-2 font-medium">60% de descuento en todo tipo de poleras, camisas y shorts.</p>
 		</div>
-		<Filters client:load/>
+		<div class="grid grid-cols-1 lg:grid-cols-2 gap-4 w-[90dvw] mx-auto mt-6">
+      <Filters />
+      <SlideShow client:load/>
+    </div>
 		<section class="w-[90dvw] mx-auto py-6">
 			<div class="card-container">
 				<Cards client:load/>
@@ -26,4 +30,39 @@ import MySiteLayout from '../layouts/MySiteLayout.astro';
     grid-auto-rows: 20rem;
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
 	}
+
+	
+
+#carousel {
+  scrollbar-width: none;
+}
+
+#carousel::-webkit-scrollbar {
+  height: 0;
+}
+
+#prev,
+#next {
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+}
+
+#prev {
+  top: 50%;
+  left: 0;
+  transform: translate(50%, -50%);
+  display: none;
+}
+
+#next {
+  top: 50%;
+  right: 0;
+  transform: translate(-50%, -50%);
+}
+
+#content {
+  box-sizing: border-box;
+}
+
 </style>
